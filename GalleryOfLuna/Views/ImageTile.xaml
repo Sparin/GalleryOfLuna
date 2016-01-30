@@ -1,0 +1,116 @@
+﻿<UserControl  x:Class="GalleryOfLuna.Views.ImageTile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:GalleryOfLuna.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             MinWidth="90"
+             BorderBrush="AliceBlue"
+             BorderThickness="0"
+             MouseEnter="extMenu_MouseEnter"
+             MouseLeave="extMenu_MouseLeave"
+             Background="#01000000"
+             Margin="10"
+             Loaded="ImageTile_Loaded"
+             Unloaded="ImageTile_Unloaded">
+    <UserControl.Effect>        
+        <DropShadowEffect ShadowDepth="5" BlurRadius="5"  Opacity="0.25"/>
+        
+    </UserControl.Effect>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="20"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid  Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="auto"/>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock  Grid.Column="0" x:Name="gifMark" Margin="2,0,0,0" Text="GIF" VerticalAlignment="Center"/>
+            <TextBlock  Grid.Column="1" Foreground="DarkGreen" Text="{Binding Upvotes}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock  Grid.Column="3" Foreground="DarkRed" Text="{Binding Downvotes}" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Foreground="DarkGoldenrod" Text="{Binding Score}" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+        </Grid>
+        <controls:AnimatedImage x:Name="Image" Stretch="Uniform" Grid.Row="1" StretchDirection="DownOnly"/>
+        <!--<Canvas x:Name="gifMark">
+            <Polygon Points="0,0  0,25 70,25 70,25  90,0">
+                <Polygon.Fill>
+                    <LinearGradientBrush EndPoint="0.8,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.157"/>
+                        <GradientStop Offset="1" Color="Transparent"/>
+                    </LinearGradientBrush>
+                </Polygon.Fill>
+            </Polygon>
+            <Line Stroke="LightBlue" X1="0" Y1="25" X2="0" Y2="5"/>
+            <Line Stroke="LightBlue" X1="0" Y1="5" X2="5" Y2="0"/>
+            <Line Stroke="LightBlue" X1="5" Y1="0" X2="70" Y2="0"/>
+            <Label Content="GIF Image"/>
+        </Canvas>-->
+
+        <StackPanel   x:Name="extMenu"    
+                     Orientation="Horizontal"
+                    VerticalAlignment="Bottom"
+                     HorizontalAlignment="Right"
+                     FlowDirection="LeftToRight"
+                     Height="30"
+                     Grid.Row="1"
+                     Visibility="Hidden">
+            <Button x:Uid="btnCopyURL" 
+                    HorizontalAlignment="Right"
+                    Margin="0,0,0,0"
+                    Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}}"
+                    Style="{DynamicResource MetroCircleButtonStyle}"
+                    BorderThickness="1"
+                    Background="White"
+                    ToolTip="{StaticResource locale_btnCopyURL}"
+                    BorderBrush="Black"
+                    Command="{Binding GetUriToClipboardCommand}">
+                <Rectangle  Height="12" Width="12"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush  Stretch="Uniform" Visual="{StaticResource appbar_link}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+            <Button x:Name="btnSave"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,0,0"
+                    Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}}"
+                    Style="{DynamicResource MetroCircleButtonStyle}"
+                    ToolTip="{StaticResource locale_btnSave}"
+                    BorderThickness="1"
+                    Background="White"
+                    BorderBrush="Black"
+                    Command="{Binding AddDownloadQueryItemCommand}">
+                <Rectangle  Height="12" Width="12"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush  Stretch="Uniform" Visual="{StaticResource appbar_disk_download}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+            <Button x:Uid="btnShow"
+                    Command="{Binding CallFullsizeModeCommand}"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,0,0"
+                    Width="{Binding Path=ActualHeight, RelativeSource={RelativeSource Self}}"
+                    Style="{DynamicResource MetroCircleButtonStyle}"
+                    ToolTip="{StaticResource locale_btnShow}"
+                    BorderThickness="0.5"
+                    Background="White"
+                    BorderBrush="Black">
+                <Rectangle Height="12" Width="12"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush  Stretch="Uniform" Visual="{StaticResource appbar_monitor}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

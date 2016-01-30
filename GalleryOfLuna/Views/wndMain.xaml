@@ -1,0 +1,201 @@
+﻿<Controls:MetroWindow x:Class="GalleryOfLuna.Views.wndMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ia="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:controls="clr-namespace:GalleryOfLuna.Controls"
+        xmlns:views="clr-namespace:GalleryOfLuna.Views"
+        Title="Luna's Gallery" 
+        TitleCaps="False"
+        MinHeight="400" 
+        MinWidth="700"
+        Height="400" 
+        Width="700"
+        GlowBrush="Gray"
+        BorderThickness="0"
+        WindowStartupLocation="CenterScreen">
+
+    <ia:Interaction.Triggers>
+        <ia:EventTrigger  EventName="Loaded">
+            <ia:InvokeCommandAction Command="{Binding LoadConfigurationCommand}"/>
+        </ia:EventTrigger>
+        <ia:EventTrigger  EventName="Closing">
+            <ia:InvokeCommandAction  Command="{Binding SaveConfigurationCommand}"/>
+        </ia:EventTrigger>
+    </ia:Interaction.Triggers>
+
+    <Controls:MetroWindow.InputBindings>
+        <KeyBinding Command="{Binding IncreasePageCommand}"
+                    Gesture="CTRL+E"/>
+        <KeyBinding Command="{Binding DecreasePageCommand}"
+                    Gesture="CTRL+D"/>
+        <KeyBinding Command="{Binding UpdateImageCollectionCommand}"
+                    Gesture="CTRL+S"/>
+        <KeyBinding Command="{Binding CallFullsizeModeCommand}"
+                    Gesture="CTRL+F"/>
+    </Controls:MetroWindow.InputBindings>
+
+    <Controls:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <Grid Width="{TemplateBinding Width}"
+                 Height="{TemplateBinding Height}"
+                 Margin="4"
+                 Background="Transparent"
+                 RenderOptions.EdgeMode="Aliased"
+                 RenderOptions.BitmapScalingMode="HighQuality">
+                <Rectangle>
+                    <Rectangle.Fill>
+                        <VisualBrush Visual="{StaticResource main_icon}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+        </DataTemplate>
+    </Controls:MetroWindow.IconTemplate>
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands >
+            <ToggleButton Content="{DynamicResource locale_btnFlDownloads}" IsChecked="{Binding ElementName=flDownloads, Path=IsOpen}" Cursor="Hand"/>
+            <ToggleButton Content="{DynamicResource locale_btnFlSettings}" IsChecked="{Binding ElementName=flSettings, Path=IsOpen}" Cursor="Hand"/>
+            <Button Click="btnHelp_Click">
+                <Rectangle Width="10" Height="15"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill"
+                         Visual="{StaticResource appbar_question}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl >
+            <Controls:Flyout x:Name="flDownloads" Position="Bottom" CloseButtonVisibility="Visible" Theme="Accent" Height="{Binding ElementName=grdMain,Path=ActualHeight}">
+                <Controls:Flyout.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="90" Opacity="0.25"/>
+                </Controls:Flyout.Effect>
+                <DataGrid 
+                    x:Name="dtrGrid"
+                    ItemsSource="{Binding DownloadsCollection}"
+                    IsReadOnly="True"
+                    AutoGenerateColumns="True"
+                    Style="{StaticResource AzureDataGrid}">
+                    <DataGrid.ContextMenu>
+                        <ContextMenu  >
+                            <MenuItem  Header="{DynamicResource locale_miOpenExplorer}" Click="miOpenExplorer_Click"  />
+                            <MenuItem Header="{DynamicResource locale_miRepeat}" Click="miRepeat_Click"  />
+                            <MenuItem Header="{DynamicResource locale_miCancel}" Click="miCancel_Click"  />
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </Controls:Flyout>
+            <Controls:Flyout x:Name="flSettings" Header="{DynamicResource locale_flSettingsHeader}" Position="Right" Theme="Light" Width="300">
+                <Controls:Flyout.Effect>
+                    <DropShadowEffect ShadowDepth="5" Direction="180" Opacity="0.25"/>
+                </Controls:Flyout.Effect>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <StackPanel >
+                        <ComboBox ItemsSource="{Binding LanguageCollection}" SelectedIndex="{Binding LanguageCollectionIndex}">
+                            <ia:Interaction.Triggers>
+                                <ia:EventTrigger EventName="SelectionChanged">
+                                    <ia:InvokeCommandAction Command="{Binding ChangeLocalizationCommand}"/>
+                                </ia:EventTrigger>
+                            </ia:Interaction.Triggers>
+                        </ComboBox>
+                        <StackPanel>
+                            <Controls:NumericUpDown x:Uid="numPage" x:Name="numPage"  Controls:TextBoxHelper.Watermark="{DynamicResource locale_lblPage}" Minimum="1" Controls:TextBoxHelper.UseFloatingWatermark="True"  Grid.Column="1" HorizontalAlignment="Stretch" ToolTip="{DynamicResource locale_lblPage}" TextAlignment="Left" Value="{Binding SearchPage}" StringFormat="{DynamicResource locale_lblPage_Format}"/>
+                            <TextBox x:Uid="APIKey" Text="{Binding APIKey}" Margin="0,1,0,1" Controls:TextBoxHelper.Watermark="{DynamicResource locale_lblAPIKey}" Controls:TextBoxHelper.ClearTextButton="True" ToolTip="{DynamicResource locale_lblAPIKey}"/>
+                            <Grid HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                    <ColumnDefinition  Width="auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Margin="0,1,0,1" 
+                                         Controls:TextBoxHelper.Watermark="{DynamicResource locale_lblPathForSavingImages}"
+                                         Text="{Binding PathForSavingImages}"
+                                         IsReadOnly="True"   
+                                         Grid.Column="0"
+                                         HorizontalAlignment="Stretch"
+                                         ToolTip="{DynamicResource locale_lblPathForSavingImages}"/>
+                                <Button Controls:ButtonHelper.PreserveTextCase="True" Grid.Column="1" BorderThickness="1" BorderBrush="Gray" Style="{DynamicResource SquareButtonStyle}" Command="{Binding GetPathForSavingImagesCommand}" Content="{DynamicResource locale_btnGetPath}"/>
+                            </Grid>
+                            <Label Content="{DynamicResource locale_lblSizeInfo_Thumbnail}"/>
+                            <ComboBox  ItemsSource="{Binding ThumbnailSizeCollection}" SelectedIndex="{Binding ThumbnailSize}" VerticalContentAlignment="Center" />
+                            <Label Content="{DynamicResource locale_lblSizeInfo_Full}"/>
+                            <ComboBox  ItemsSource="{Binding HighResolutionSizeCollection}" SelectedIndex="{Binding HighResolutionSize}" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        <!--</Expander>-->
+                        <!--<Expander Margin="0" BorderBrush="White" Background="White" Header="Инструменты">
+                            <StackPanel >
+                                <Button x:Name="btnClearCache">Очистить временное хранилище</Button>
+                                <Button x:Name="btnClearDuplicates">Удалить дублирующиеся изображения</Button>
+                            </StackPanel>
+                        </Expander>-->
+                    </StackPanel>
+                </ScrollViewer>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
+
+    <Grid x:Name="grdMain">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="60*"></ColumnDefinition>
+            <ColumnDefinition  Width="20*" ></ColumnDefinition>
+            <ColumnDefinition  Width="20*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer  x:Name="scrWorkspace" 
+                       HorizontalScrollBarVisibility="Disabled"  
+                       VerticalScrollBarVisibility="Auto"
+                       Grid.Column="0" 
+                       Grid.Row="0" 
+                       Grid.ColumnSpan="4">
+            <ItemsControl   ItemsSource="{Binding ImageCollection}"
+                           Grid.Column="0" 
+                            Grid.Row="1" 
+                            Grid.ColumnSpan="3">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <controls:AlignableWrapPanel 
+                             IsItemsHost="True" 
+                            HorizontalAlignment="Center"/>
+                            <!--I don't know why, but alignment doesn't work with ItemsControl. 
+                            ItemsControl everytime sets alignment to "Left"
+                            Yep, it's a bug
+                            
+                            Alignment function disabled at Controls/AlignableWrapPanel.cs-->
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1">
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="5" Direction="100" Opacity="0.25"/>
+            </Grid.Effect>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox TextWrapping="NoWrap" TabIndex="0" BorderThickness="0,0,0,1" BorderBrush="AliceBlue" Controls:TextBoxHelper.Watermark="{DynamicResource locale_txtSeacrchQueryWatermark}" Text="{Binding SearchQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Controls:ControlsHelper.FocusBorderBrush="AliceBlue">
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Enter"
+                                Command="{Binding UpdateImageCollectionCommand}"/>
+                </TextBox.InputBindings>
+            </TextBox>
+            <Button Controls:ButtonHelper.PreserveTextCase="True" Grid.Column="1" TabIndex="1" Style="{DynamicResource SquareButtonStyle}"  BorderThickness="1,0,1,1" BorderBrush="AliceBlue"  Command="{Binding AddCurrectPageAsDQItemsCommand}"  Content="{DynamicResource locale_btnSaveAll}"/>
+            <Button Controls:ButtonHelper.PreserveTextCase="True" Grid.Column="2" TabIndex="2" Style="{DynamicResource SquareButtonStyle}" BorderThickness="0,0,0,1" BorderBrush="AliceBlue"  Command="{Binding UpdateImageCollectionCommand}" Click="btnDownload_Click" Content="{DynamicResource locale_btnDownload}"/>
+        </Grid>
+
+        <Label Grid.ColumnSpan="2" Grid.Row="3" Content="{Binding InformationLabel}"/>
+        <Controls:MetroProgressBar IsIndeterminate="{Binding IsBusy}" Grid.ColumnSpan="1" Grid.Row="3" Grid.Column="3"/>
+    </Grid>
+</Controls:MetroWindow>

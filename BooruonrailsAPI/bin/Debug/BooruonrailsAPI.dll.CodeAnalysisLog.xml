@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="12.0">
+ <Targets>
+  <Target Name="C:\Users\Юрий\Desktop\GalleryOfLuna\BooruonrailsAPI\bin\Debug\BooruonrailsAPI.dll">
+   <Modules>
+    <Module Name="booruonrailsapi.dll">
+     <Namespaces>
+      <Namespace Name="BooruonrailsAPI">
+       <Types>
+        <Type Name="BooruonrailsClient" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2015-06-05 23:03:57Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Реализуйте IDisposable для 'BooruonrailsClient', поскольку он создает члены следующих типов IDisposable: 'WebClient'. Если 'BooruonrailsClient' ранее был доставлен, добавление в данный тип новых членов, реализующих IDisposable, считается критическим изменением для существующих потребителей.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Типы, которым принадлежат освобождаемые поля, должны быть освобождаемыми</Name>
+   <Description>Типы, объявляющие освобождаемые члены, также должны реализовывать IDisposable. Если типу не принадлежат какие-либо неуправляемые ресурсы, нет необходимости реализовывать для него метод завершения.</Description>
+   <Resolution Name="DependsOnFix">Реализуйте IDisposable для {0}, поскольку он создает члены следующих типов IDisposable: {1}. Если {0} ранее был доставлен, добавление в данный тип новых членов, реализующих IDisposable, считается критическим изменением для существующих потребителей.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="12.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Категория</String>
+  <String Key="Certainty">Достоверность</String>
+  <String Key="CollapseAll">Свернуть все</String>
+  <String Key="CheckId">ИД проверки</String>
+  <String Key="Error">Ошибка</String>
+  <String Key="Errors">ошибки</String>
+  <String Key="ExpandAll">Развернуть все</String>
+  <String Key="Help">Справка</String>
+  <String Key="Line">Строка</String>
+  <String Key="Messages">сообщения</String>
+  <String Key="LocationNotStoredInPdb">[расположение не сохранено в PDB]</String>
+  <String Key="Project">Проект</String>
+  <String Key="Resolution">Разрешение</String>
+  <String Key="Rule">Правило</String>
+  <String Key="RuleFile">Файл правил</String>
+  <String Key="RuleDescription">Описание правила</String>
+  <String Key="Source">Источник</String>
+  <String Key="Status">Состояние</String>
+  <String Key="Target">Цель</String>
+  <String Key="Warning">Предупреждение</String>
+  <String Key="Warnings">предупреждения</String>
+  <String Key="ReportTitle">Отчет по анализу кода</String>
+ </Localized>
+</FxCopReport>

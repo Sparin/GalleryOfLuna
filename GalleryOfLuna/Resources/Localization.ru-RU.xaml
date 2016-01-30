@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!--"{Цифра}"- это системный аргумент. Он обязательный и не требует перевода-->
+    <!--Главная секция-->
+    <v:String x:Key="locale_btnDownload">Загрузить</v:String>
+    <v:String x:Key="locale_btnSaveAll">Сохранить страницу</v:String>
+    <v:String x:Key="locale_txtSeacrchQueryWatermark">Строка поиска</v:String>
+    <!--Flyouts-->
+    <v:String x:Key="locale_btnFlDownloads">Загрузки</v:String>
+    <v:String x:Key="locale_btnFlSettings">Настройки</v:String>
+    <!--Flyout.Настройки-->
+    <v:String x:Key="locale_flSettingsHeader">Настройки</v:String>
+    <v:String x:Key="locale_lblSizeInfo_Full">Размер изображения</v:String>
+    <v:String x:Key="locale_lblSizeInfo_Thumbnail">Размер превью изображения</v:String>
+    <v:String x:Key="locale_lblPage">Страница:</v:String>
+    <v:String x:Key="locale_lblPage_Format">Страница: {0}</v:String>
+    <!--"{0}" - это системный аргумент. Он обязательный и не требует перевода-->
+    <v:String x:Key="locale_lblAPIKey">Идентификатор пользователя</v:String>
+    <v:String x:Key="locale_lblPathForSavingImages">Путь сохранения изображений</v:String>
+    <v:String x:Key="locale_btnGetPath">Обзор</v:String>
+    <!--Загрузки-->
+    <v:String x:Key="locale_miOpenExplorer">Открыть в проводнике</v:String>
+    <v:String x:Key="locale_miRepeat">Повторить</v:String>
+    <v:String x:Key="locale_miCancel">Отменить</v:String>
+    <!--Плитка (Image Tile)-->
+    <v:String x:Key="locale_btnCopyURL">Скопировать URL адрес в буфер обмена</v:String>
+    <v:String x:Key="locale_btnSave">Сохранить изображение</v:String>
+    <v:String x:Key="locale_btnShow">Полноэкранный режим</v:String>
+    <!--Полноэкранный режим-->
+    <v:String x:Key="locale_flHeaderTags">Ключевые слова</v:String>
+    <!--Информация, получаемая от исполняемого кода-->
+    <!--"{Цифра}"- это системный аргумент. Он обязательный и не требует перевода-->
+    <v:String x:Key="locale_GetImageCollection">Получение коллекции по поисковому запросу "{0}" на {1} странице</v:String>
+    <v:String x:Key="locale_GotImageCollection">Получена коллекция из {0} изображений</v:String>
+    <v:String x:Key="locale_AddCurrectPageAsDQI">Изображения добавлены в список загрузок</v:String>
+    <v:String x:Key="locale_AddDownloadQueryItem">Изображение с ID {0} добавлено в список загрузок</v:String>
+    <v:String x:Key="locale_LoadConfigurationSuccesful">Конфигурация программы загружена успешно</v:String>
+    <v:String x:Key="locale_LoadConfigurationError">Не удалось загрузить конфигурацию программы"</v:String>
+    <v:String x:Key="locale_SelectPage">Выбрана {0} страница. Нажмите CTRL + S, чтобы загрузить страницу</v:String>
+    <v:String x:Key="locale_GetPathForSaving">Укажите путь для сохранения изображений</v:String>
+    <!--Информация о ПО-->
+    <v:String x:Key="locale_lblHelpHeader">Справка</v:String>
+    <v:String x:Key="locale_expInfo">Условные обозначения</v:String>
+    <v:String x:Key="locale_btnCopyURLAbout">Копирует URL изображения в буфер обмена</v:String>
+    <v:String x:Key="locale_btnSaveAbout">Сохраняет изображение в указанную папку</v:String>
+    <v:String x:Key="locale_btnShowAbout">Открывает полноэкранный режим на данном изображении</v:String>
+    <v:String x:Key="locale_expShortcuts">Быстрые клавиши</v:String>
+    <v:String x:Key="locale_lblSearchGestureAbout">CTRL+S - Клавиша "Загрузить"</v:String>
+    <v:String x:Key="locale_lblNextPageGestureAbout">CTRL+E - Выбрать следующую страницу</v:String>
+    <v:String x:Key="locale_lblPreviousPageAbout">CTRL+D - Выбрать предыдущую страницу</v:String>
+    <v:String x:Key="locale_lblShowAbout">CTRL+F - Открыть полноэкранный режим для текущей страницы</v:String>
+    <v:String x:Key="locale_expShortcutsFullsize">Быстрые клавиши (Полноэкранный режим)</v:String>
+    <v:String x:Key="locale_lblSaveGestureAbout">CTRL+S - Сохранить изображение</v:String>
+    <v:String x:Key="locale_lblSwitchPageAbout">Стрелки - Перелистывание коллекции</v:String>
+    <v:String x:Key="locale_lblAuthorHeader">Лицензии</v:String>
+    <v:String x:Key="locale_lblExitShorcut">ESC - Выход из полноэкранного режима</v:String>
+    <!--Отключены-->
+    
+</ResourceDictionary>

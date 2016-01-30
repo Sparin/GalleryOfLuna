@@ -1,0 +1,24 @@
+C:\Users\Юрий\Google Диск\Projects\CSharp .NET\WPF_GalleryOfLuna\BooruonrailsAPI\bin\Release\BooruonrailsAPI.dll
+C:\Users\Юрий\Google Диск\Projects\CSharp .NET\WPF_GalleryOfLuna\BooruonrailsAPI\bin\Release\BooruonrailsAPI.pdb
+C:\Users\Юрий\Google Диск\Projects\CSharp .NET\WPF_GalleryOfLuna\BooruonrailsAPI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Юрий\Google Диск\Projects\CSharp .NET\WPF_GalleryOfLuna\BooruonrailsAPI\bin\Release\Newtonsoft.Json.xml
+C:\Users\Юрий\Google Диск\Projects\CSharp .NET\WPF_GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.dll
+C:\Users\Юрий\Google Диск\Projects\CSharp .NET\WPF_GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.pdb
+C:\Users\Юрий\Google Диск\Projects\CSharp .NET\WPF_GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.csprojResolveAssemblyReference.cache
+C:\Users\Юрий\Google Диск\GalleryOfLuna\BooruonrailsAPI\bin\Release\BooruonrailsAPI.dll
+C:\Users\Юрий\Google Диск\GalleryOfLuna\BooruonrailsAPI\bin\Release\BooruonrailsAPI.pdb
+C:\Users\Юрий\Google Диск\GalleryOfLuna\BooruonrailsAPI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Юрий\Google Диск\GalleryOfLuna\BooruonrailsAPI\bin\Release\Newtonsoft.Json.xml
+C:\Users\Юрий\Google Диск\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.dll
+C:\Users\Юрий\Google Диск\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.pdb
+C:\Users\Юрий\Google Диск\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.csprojResolveAssemblyReference.cache
+C:\Users\spari\Google Диск\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.csprojResolveAssemblyReference.cache
+C:\Users\spari\Google Диск\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.dll
+C:\Users\spari\Google Диск\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.pdb
+G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\bin\Release\BooruonrailsAPI.dll
+G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\bin\Release\BooruonrailsAPI.pdb
+G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\bin\Release\Newtonsoft.Json.dll
+G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\bin\Release\Newtonsoft.Json.xml
+G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.csprojResolveAssemblyReference.cache
+G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.dll
+G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.pdb

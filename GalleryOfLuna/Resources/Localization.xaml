@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!--"{digit}"- This is a system argument. That's a mandatory and doesn't require translation-->
+    <!--Main section-->
+    <v:String x:Key="locale_btnDownload">Download</v:String>
+    <v:String x:Key="locale_btnSaveAll">Save page</v:String>
+    <v:String x:Key="locale_txtSeacrchQueryWatermark">Search line</v:String>
+    <!--Flyouts-->
+    <v:String x:Key="locale_btnFlDownloads">Download</v:String>
+    <v:String x:Key="locale_btnFlSettings">Properties</v:String>
+    <!--Flyout.Properties-->
+    <v:String x:Key="locale_flSettingsHeader">Properties</v:String>
+    <v:String x:Key="locale_lblSizeInfo_Full">Image size</v:String>
+    <v:String x:Key="locale_lblSizeInfo_Thumbnail">Preview image size</v:String>
+    <v:String x:Key="locale_lblPage">Size:</v:String>
+    <v:String x:Key="locale_lblPage_Format">Size: {0}</v:String>
+    <!--"{0}" - This is a system argument. That's a mandatory and doesn't require translation-->
+    <v:String x:Key="locale_lblAPIKey">User identification</v:String>
+    <v:String x:Key="locale_lblPathForSavingImages">Image saving path</v:String>
+    <v:String x:Key="locale_btnGetPath">Explore</v:String>
+    <!--Download-->
+    <v:String x:Key="locale_miOpenExplorer">Open in browser</v:String>
+    <v:String x:Key="locale_miRepeat">Repeat</v:String>
+    <v:String x:Key="locale_miCancel">Cancel</v:String>
+    <!--Tile (Image Tile)-->
+    <v:String x:Key="locale_btnCopyURL">Copy URL to clipboard</v:String>
+    <v:String x:Key="locale_btnSave">Save image</v:String>
+    <v:String x:Key="locale_btnShow">Fullscreen mode</v:String>
+    <!--Fullscreen mode-->
+    <v:String x:Key="locale_flHeaderTags">Keywords</v:String>
+    <!--Information from executed code-->
+    <!--"{digit}"- This is a system argument. That's a mandatory and doesn't require translation-->
+    <v:String x:Key="locale_GetImageCollection">Recieve searched collection "{0}" from {1} Page</v:String>
+    <v:String x:Key="locale_GotImageCollection">Recieved collection of {0} images</v:String>
+    <v:String x:Key="locale_AddCurrectPageAsDQI">Images added to list of downloads</v:String>
+    <v:String x:Key="locale_AddDownloadQueryItem">image with ID {0} has been added to the list of downloads</v:String>
+    <v:String x:Key="locale_LoadConfigurationSuccesful">Program configuration has been downloaded successfuly</v:String>
+    <v:String x:Key="locale_LoadConfigurationError">Error occured while downloading program configuration"</v:String>
+    <v:String x:Key="locale_SelectPage">{0} page has been selected. Press CTRL + S, to load a page</v:String>
+    <v:String x:Key="locale_GetPathForSaving">Select a download path</v:String>
+    <!--Software information-->
+    <v:String x:Key="locale_lblHelpHeader">Help</v:String>
+    <v:String x:Key="locale_expInfo">Legend</v:String>
+    <v:String x:Key="locale_btnCopyURLAbout">Copy URL to buffer</v:String>
+    <v:String x:Key="locale_btnSaveAbout">Saving Image to selected folder</v:String>
+    <v:String x:Key="locale_btnShowAbout">Open an image in fullscreen</v:String>
+    <v:String x:Key="locale_expShortcuts">Shortcuts</v:String>
+    <v:String x:Key="locale_lblSearchGestureAbout">CTRL+S - shortcut for "Download"</v:String>
+    <v:String x:Key="locale_lblNextPageGestureAbout">CTRL+E - Select next page</v:String>
+    <v:String x:Key="locale_lblPreviousPageAbout">CTRL+D - Select previous page</v:String>
+    <v:String x:Key="locale_lblShowAbout">CTRL+F - Open Fullscreen mode for current page</v:String>
+    <v:String x:Key="locale_expShortcutsFullsize">Shortcuts (Fullscreen mode)</v:String>
+    <v:String x:Key="locale_lblSaveGestureAbout">CTRL+S - Save image</v:String>
+    <v:String x:Key="locale_lblSwitchPageAbout">Arrows for browsing your collection</v:String>
+    <v:String x:Key="locale_lblAuthorHeader">Licenses</v:String>
+    <v:String x:Key="locale_lblExitShorcut">ESC - Exit from fullscreen mode</v:String>
+    <!--Disabled-->
+
+</ResourceDictionary>
