@@ -16,7 +16,16 @@ namespace GalleryOfLuna.Views
         public wndMain()
         {
             InitializeComponent();
-            DataContext = new wndMainViewModel();
+            if (!System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            {
+                MessageBox.Show("Network is unreachable. Please check your internet connection", "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information, MessageBoxResult.OK,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                Dispatcher.InvokeShutdown();
+            }
+            else
+                DataContext = new wndMainViewModel();
         }
 
         private void miOpenExplorer_Click(object sender, RoutedEventArgs e)
