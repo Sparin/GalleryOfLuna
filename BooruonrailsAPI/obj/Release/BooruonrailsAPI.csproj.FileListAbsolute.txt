@@ -22,3 +22,9 @@ G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\bin\Release\Newtonsoft.Json.xml
 G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.csprojResolveAssemblyReference.cache
 G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.dll
 G:\Google Drive\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.pdb
+C:\Users\spari\Documents\GitHub\GalleryOfLuna\BooruonrailsAPI\bin\Release\BooruonrailsAPI.dll
+C:\Users\spari\Documents\GitHub\GalleryOfLuna\BooruonrailsAPI\bin\Release\BooruonrailsAPI.pdb
+C:\Users\spari\Documents\GitHub\GalleryOfLuna\BooruonrailsAPI\bin\Release\Newtonsoft.Json.xml
+C:\Users\spari\Documents\GitHub\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.csprojResolveAssemblyReference.cache
+C:\Users\spari\Documents\GitHub\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.dll
+C:\Users\spari\Documents\GitHub\GalleryOfLuna\BooruonrailsAPI\obj\Release\BooruonrailsAPI.pdb

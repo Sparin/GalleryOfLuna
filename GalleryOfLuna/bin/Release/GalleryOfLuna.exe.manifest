@@ -4,7 +4,7 @@
   <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="GalleryOfLuna" version="1.0.2.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="GalleryOfLuna" version="2.0.2.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="GalleryOfLuna.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -68,13 +68,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GalleryOfLuna.exe" size="1932736">
-      <assemblyIdentity name="GalleryOfLuna" version="1.0.2.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="GalleryOfLuna" version="2.0.2.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qlD/OxRYrhwU3z/dtwMJ8mnCqAg=</dsig:DigestValue>
+        <dsig:DigestValue>LVN+jtaO4zWNWaRtKPRc9j9qxLw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
