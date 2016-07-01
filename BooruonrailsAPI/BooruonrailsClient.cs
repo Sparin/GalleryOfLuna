@@ -210,10 +210,10 @@ namespace BooruonrailsAPI //derpiboo.ru Booruonrails API v1.0 + Noblockme
             public string full { get; set; }
         }
 
-        [JsonProperty("id")]
-        public string id { get; set; }
+        //[JsonProperty("id")]
+        //public string id { get; set; }
 
-        [JsonProperty("id_number")]
+        [JsonProperty("id")]
         public int id_number { get; set; }
 
         [JsonProperty("created_at")]
